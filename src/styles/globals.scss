@@ -1,0 +1,145 @@
+@import "./fonts.scss";
+@import "./variables.scss";
+@import "./mixins.scss";
+
+/** background-color **/
+.bg-white {
+  background-color: $cr-white;
+}
+.bg-dark-blue{
+  background-color: $cr-dark-blue;
+}
+.bg-blue{
+  background-color: $cr-blue;
+}
+.bg-azure{
+  background-color: $cr-azure;
+}
+
+
+
+/** color **/
+
+.cr-white {
+  color: $cr-white;
+}
+.cr-gray{
+  color: $cr-gray;
+}
+.cr-black{
+  color: $cr-black;
+}
+.cr-azure{
+  color: $cr-azure;
+}
+
+
+
+/** **/
+.visible{
+  visibility:visible;
+  opacity: 1;
+}
+.invisible{
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+.overflow-auto{
+  overflow: auto;
+}
+.overflow-hidden{
+  overflow: hidden;
+}
+.no-scrollbar{
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.disabled{
+  pointer-events: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;
+  cursor: default;
+  opacity: .6;
+}
+
+
+/** scrollbar **/
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $cr-gray $cr-azure;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  @include scrollbar;
+}
+
+*::-webkit-scrollbar-track {
+  background: $cr-azure;
+}
+*::-webkit-scrollbar-button{
+  @include scrollbar;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $cr-gray;
+  border: 1px solid $cr-azure;
+}
+
+
+/** **/
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, Montserrat, Russo One,Roboto, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.3;
+  background-color: $cr-blue;
+  font-weight: normal;
+  color: $cr-gray-light-two;
+}
+a{
+  color: $cr-gray-light;
+  font-weight: 700;
+}
+h2{
+  text-transform: capitalize;
+  font-size:1.8em;
+}
+h3{
+  margin: 0 0 .3em 0;
+  text-transform: capitalize;
+  font-size: 1.2em;
+}
+
+button {
+  @include button;
+
+  & svg {
+    fill: $cr-gray-light-two;
+    width: 1.3em;
+    height: 1.3em;
+  }
+}
+
+.dot{
+  margin: .3em;
+  width: .6em;
+  height: .6em;
+  border-radius: 100px;
+  background-color: $cr-white;
+}
+
+p{
+  margin: .1em;
+}

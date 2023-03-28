@@ -1,0 +1,13 @@
+/node_modules
+npm-debug.log
+yarn.lock
+.dockerignore
+.git
+.gitignore
+Dockerfile_old
+docker-compose*
+README.md
+LICENSE
+.vscode
+.idea
+db

@@ -1,0 +1,36 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.main{
+  @include column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 80vh;
+  margin: auto;
+}
+
+.wrapper{
+
+}
+
+.code{
+  text-align: center;
+  margin: auto;
+  padding: 20px 50px;
+
+  & span{
+    font-size: 1.3em;
+    font-weight: 700;
+  }
+}
+.errorIcon{
+  display: block;
+  margin: auto;
+  width: 220px;
+  fill: $cr-gray-light-two;
+}
+.message{
+  padding: 10px 0;
+}

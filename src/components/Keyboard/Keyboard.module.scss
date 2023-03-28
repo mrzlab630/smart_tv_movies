@@ -1,0 +1,87 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+
+$color:$cr-gray-light;
+$colorHover:$cr-white;
+$colorHoverBtn:$cr-dark-blue;
+
+.hide{
+  display: none !important;
+}
+
+.select{
+  background: $colorHoverBtn;
+}
+
+.background{
+  background: #2F3336;
+}
+
+.wrap{
+  border-radius: 10px;
+  background: $cr-kb-background;
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  font: 28px arial;
+
+  .line{
+    display: flex;
+    margin: .1em;
+
+    svg{
+      width: 1em;
+      height: auto;
+
+      g{
+        fill: $color;
+      }
+    }
+
+    span{
+      box-shadow: 0px 3px 3px rgba(0, 0, 0, .7);
+      color:$color;
+      padding:.3em;
+      border-radius: 12px;
+      text-shadow: 0px 0px 40px $color, 0px 0px 80px $color;
+      width: 45px;
+      text-align: center;
+      margin: .1em;
+
+      &:hover{
+        background: $colorHoverBtn;
+      }
+      &:active {
+        transform: scale(.9);
+      }
+
+      button{
+        color:$color;
+        font: 28px arial;
+        text-transform: capitalize;
+        outline: none;
+
+        &:active{
+          outline: none;
+        }
+        &:hover{
+          color:$colorHover;
+
+          svg{
+            fill: $colorHover;
+            g{
+              fill: $colorHover;
+            }
+          }
+        }
+      }
+
+
+    }
+  }
+
+
+
+}

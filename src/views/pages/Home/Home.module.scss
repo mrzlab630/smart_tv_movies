@@ -1,0 +1,83 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+h1 {
+  font-size:2em;
+  margin:.67em 0
+}
+
+@mixin select{
+  //  transform: translate3d(0px, 0px, 35px);
+  transform: scale(1.515);
+  background: $cr-blue !important;
+}
+
+
+.select{
+@include select;
+}
+
+.wrap{
+  @include column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+
+  .title{
+    height: 20vh;
+    padding: 1em 0;
+  }
+
+  .gridWrap{
+  margin-top: 1vh;
+  }
+
+
+  .blocksGrid{
+    flex: 0 0 auto;
+    perspective: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    grid-gap: 20px;
+    max-width: 480px;
+    transform: rotate(45deg);
+
+    .block {
+      background: $cr-black-light-two;
+      border: 1px solid $cr-gray;
+      padding: 20px;
+      color: $cr-white;
+      box-shadow: 30px 30px 30px -20px rgba(black,.6);
+      border-radius: 2px;
+
+      .content{
+        @include row;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+
+        transform: rotate(-45deg);
+        position: relative;
+        top: 2.5em;
+        right: 0.1em;
+        overflow: hidden;
+      }
+
+      &:nth-child(odd) {animation: 2500ms ease-in-out infinite alternate pulse;}
+      &:nth-child(even) {animation:  2500ms 2500ms ease-in-out infinite alternate pulse;}
+
+      &:hover, &:active{
+        @include select;
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  to {
+    transform: translate3d(0px, 0px, -15px);
+    box-shadow: 15px 15px 20px -20px rgba(black,.8)
+  }
+}
